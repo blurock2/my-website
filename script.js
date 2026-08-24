@@ -154,6 +154,48 @@ function updateYear() {
 
 }
 
+function initializeEasterEgg() {
+
+    const easterEgg = document.getElementById("easter-egg");
+    const closeButton = document.getElementById("close-easter-egg");
+    const konamiCode = [
+        "ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft",
+        "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"
+    ];
+    let keyIndex = 0;
+
+    if (!easterEgg || !closeButton) {
+        return;
+    }
+
+    document.addEventListener("keydown", event => {
+
+        if (event.key === konamiCode[keyIndex]) {
+            keyIndex += 1;
+        } else {
+            keyIndex = event.key === konamiCode[0] ? 1 : 0;
+        }
+
+        if (keyIndex === konamiCode.length) {
+            easterEgg.classList.add("is-open");
+            easterEgg.setAttribute("aria-hidden", "false");
+            keyIndex = 0;
+        }
+
+        if (event.key === "Escape") {
+            easterEgg.classList.remove("is-open");
+            easterEgg.setAttribute("aria-hidden", "true");
+        }
+
+    });
+
+    closeButton.addEventListener("click", () => {
+        easterEgg.classList.remove("is-open");
+        easterEgg.setAttribute("aria-hidden", "true");
+    });
+
+}
+
 
 // ======================================== Initialization of the site
 
@@ -163,5 +205,6 @@ document.addEventListener("DOMContentLoaded", () => {
     loadDiscordWidget();
 
     updateYear();
+    initializeEasterEgg();
 
 });

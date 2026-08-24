@@ -1,0 +1,80 @@
+.uses-page {
+    width: min(var(--max-width), calc(100% - 40px));
+    margin: 0 auto;
+    padding-top: 72px;
+}
+
+.uses-hero {
+    max-width: 760px;
+    padding: 145px 0 120px;
+}
+
+.uses-hero h1 {
+    font-size: clamp(60px, 10vw, 120px);
+    line-height: 0.95;
+    letter-spacing: -5px;
+    margin-bottom: 30px;
+}
+
+.uses-lead {
+    color: var(--text-muted);
+    font-size: 20px;
+    line-height: 1.7;
+}
+
+.uses-section {
+    padding: 100px 0;
+    border-top: 1px solid var(--border);
+}
+
+.uses-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.uses-item {
+    min-height: 205px;
+    padding: 28px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.uses-item:hover {
+    border-color: var(--hover-accent);
+    transform: translateY(-3px);
+}
+
+.uses-item h2 {
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+.uses-item:hover h2 {
+    color: var(--hover-accent);
+}
+
+.uses-item > p:last-child {
+    color: var(--text-muted);
+    max-width: 480px;
+}
+
+.uses-footer {
+    padding-top: 30px;
+}
+
+@media (max-width: 650px) {
+    .uses-hero {
+        padding: 100px 0 85px;
+    }
+
+    .uses-hero h1 {
+        letter-spacing: -3px;
+    }
+
+    .uses-grid {
+        grid-template-columns: 1fr;
+    }
+}

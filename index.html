@@ -19,6 +19,7 @@
         <nav class="nav-links">
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
+            <a href="uses.html">Uses</a>
             <a href="#discord">Discord</a>
             <a href="#contact">Contact</a>
         </nav>
@@ -80,7 +81,7 @@
                     <p>
                         This website is basically a place to collect the
                         things I've built, worked on, learned, and experimented
-                        with over time. Along with shamelless self-promotion, of course.
+                        with over time. Along with shameless self-promotion, of course.
                     </p>
                 </div>
 
@@ -108,10 +109,10 @@
 
                 <!-- ======================================== Project card -->
 
-                <article class="project-card">
+                <a href="observer.html" class="project-card project-card-link">
 
                     <div class="project-image">
-                        <span>PROJECT IMAGE</span>
+                        <img src="images/Observer.png" alt="Observer logo">
                     </div>
 
                     <div class="project-content">
@@ -128,15 +129,9 @@
                             a lot of other server tools.
                         </p>
 
-                        <div class="project-tags">
-                            <span>Python</span>
-                            <span>Discord.py</span>
-                            <span>SQLite</span>
-                        </div>
-
                     </div>
 
-                </article>
+                </a>
 
 
                 <!-- ======================================== Project card -->
@@ -155,16 +150,12 @@
 
                         <h3>Project Name</h3>
 
+                        <p class="project-status">[WORK IN PROGRESS]</p>
+
                         <p>
                             A short description of something you've built.
                             Replace this with your own project information.
                         </p>
-
-                        <div class="project-tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                        </div>
 
                     </div>
 
@@ -187,15 +178,12 @@
 
                         <h3>Another Project</h3>
 
+                        <p class="project-status">[WORK IN PROGRESS]</p>
+
                         <p>
                             Another place for something cool you've made.
                             You can duplicate this card whenever you need it.
                         </p>
-
-                        <div class="project-tags">
-                            <span>Technology</span>
-                            <span>Technology</span>
-                        </div>
 
                     </div>
 
@@ -365,6 +353,7 @@
                 <h3>Explore</h3>
                 <a href="#about">About</a>
                 <a href="#projects">Projects</a>
+                <a href="uses.html">Uses</a>
                 <a href="#contact">Contact</a>
             </div>
 
@@ -382,6 +371,22 @@
         </div>
 
     </footer>
+
+    <aside id="easter-egg" class="easter-egg" aria-hidden="true">
+        <div class="terminal-window" role="dialog" aria-labelledby="terminal-title">
+            <div class="terminal-header">
+                <span id="terminal-title">fedja@portfolio:~</span>
+                <button id="close-easter-egg" class="terminal-close" type="button" aria-label="Close terminal">x</button>
+            </div>
+            <div class="terminal-body">
+                <p><span class="terminal-prompt">$</span> whoami</p>
+                <p class="terminal-output">fedja / builder of questionable side projects</p>
+                <p><span class="terminal-prompt">$</span> status</p>
+                <p class="terminal-output">currently turning ideas into websites and bots</p>
+                <p><span class="terminal-prompt">$</span> <span class="terminal-cursor">_</span></p>
+            </div>
+        </div>
+    </aside>
 
 
     <script src="script.js"></script>
