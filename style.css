@@ -1,0 +1,621 @@
+/* ======================================== Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b0b0d;
+    color: #f1f1f1;
+    line-height: 1.6;
+}
+
+
+/* ======================================== Variables */
+
+:root {
+    --background: #0b0b0d;
+    --surface: #111114;
+    --surface-light: #18181c;
+    --border: #26262c;
+
+    --text: #f1f1f1;
+    --text-muted: #96969f;
+
+    --accent: #ffffff;
+
+    --max-width: 1200px;
+}
+
+
+/* ======================================== General thing*/
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+section {
+    scroll-margin-top: 100px;
+}
+
+.section {
+    width: min(var(--max-width), calc(100% - 40px));
+    margin: 0 auto;
+    padding: 120px 0;
+}
+
+
+/* ======================================== Navigation */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 40px;
+
+    background: rgba(11, 11, 13, 0.8);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+    z-index: 1000;
+}
+
+.nav-logo {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    font-size: 14px;
+
+    transition:
+        color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--text);
+}
+
+
+/* ======================================== Hero (good song btw) */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    width: min(var(--max-width), calc(100% - 40px));
+    margin: 0 auto;
+
+    padding-top: 72px;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-small {
+    color: var(--text-muted);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: clamp(60px, 10vw, 120px);
+    line-height: 0.95;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 30px;
+}
+
+.hero-description {
+    max-width: 650px;
+
+    color: var(--text-muted);
+
+    font-size: 19px;
+    line-height: 1.7;
+
+    margin-bottom: 35px;
+}
+
+
+/* ======================================== Big pushy buttons */
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 46px;
+
+    padding: 0 22px;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+.primary-button {
+    background: var(--accent);
+    color: #0b0b0d;
+}
+
+.secondary-button {
+    background: var(--surface-light);
+    border: 1px solid var(--border);
+}
+
+
+/* ======================================== Section Headings */
+
+.section-heading {
+    margin-bottom: 55px;
+}
+
+.section-label {
+    color: var(--text-muted);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 12px;
+}
+
+.section-heading h2 {
+    font-size: clamp(35px, 5vw, 60px);
+    line-height: 1;
+
+    letter-spacing: -2px;
+}
+
+
+/* ========================================  About */
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+.about-text {
+    max-width: 650px;
+}
+
+.about-text p {
+    color: var(--text-muted);
+
+    font-size: 18px;
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+}
+
+.about-placeholder {
+    height: 350px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+
+/* ======================================== Projects */
+
+.projects-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.project-card {
+    overflow: hidden;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: #3a3a42;
+}
+
+.project-image {
+    height: 220px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--surface-light);
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.project-content {
+    padding: 25px;
+}
+
+.project-type {
+    color: var(--text-muted);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+}
+
+.project-content h3 {
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+.project-content p {
+    color: var(--text-muted);
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-top: 20px;
+}
+
+.project-tags span {
+    padding: 5px 9px;
+
+    border-radius: 5px;
+
+    background: var(--surface-light);
+    border: 1px solid var(--border);
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+}
+
+
+/* ======================================== Skill (issues)*/
+
+.skills-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+.skill-card {
+    padding: 25px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.skill-card h3 {
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+
+/* ======================================== Bugcord */
+
+.discord-container {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 25px;
+}
+
+.discord-info,
+.discord-widget {
+    padding: 35px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.discord-status {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    color: var(--text-muted);
+
+    font-size: 12px;
+
+    margin-bottom: 25px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #3ba55d;
+}
+
+.discord-info h3 {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.discord-info p {
+    color: var(--text-muted);
+
+    max-width: 450px;
+
+    margin-bottom: 25px;
+}
+
+.widget-header {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid var(--border);
+
+    margin-bottom: 20px;
+}
+
+.widget-header span {
+    color: var(--text-muted);
+
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.widget-header strong {
+    font-size: 20px;
+}
+
+.discord-members {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.discord-member {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.discord-avatar {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+}
+
+.discord-member-name {
+    font-size: 14px;
+}
+
+.discord-member-status {
+    color: var(--text-muted);
+
+    font-size: 11px;
+}
+
+.loading {
+    color: var(--text-muted);
+}
+
+
+/* ======================================== Contact*/
+
+.contact-section {
+    padding-bottom: 160px;
+}
+
+.contact-description {
+    color: var(--text-muted);
+
+    font-size: 18px;
+
+    margin-bottom: 30px;
+}
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+.contact-links a {
+    padding: 12px 18px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 7px;
+
+    font-size: 14px;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.contact-links a:hover {
+    background: var(--surface-light);
+    transform: translateY(-2px);
+}
+
+
+/* ======================================== Footer */
+
+.footer {
+    width: min(var(--max-width), calc(100% - 40px));
+
+    margin: 0 auto;
+
+    padding: 30px 0;
+
+    display: flex;
+    justify-content: space-between;
+
+    border-top: 1px solid var(--border);
+
+    color: var(--text-muted);
+
+    font-size: 12px;
+}
+
+
+/* ======================================== Responsive (i hope) */
+
+@media (max-width: 900px) {
+
+    .projects-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .about-placeholder {
+        max-width: 350px;
+    }
+
+    .discord-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .section {
+        padding: 80px 0;
+    }
+
+    .hero h1 {
+        letter-spacing: -3px;
+    }
+
+    .projects-grid,
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+}
