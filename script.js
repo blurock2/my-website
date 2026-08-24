@@ -1,6 +1,44 @@
 // ======================================== Discord server thing
 
 const DISCORD_SERVER_ID = "1535974879554437210";
+const GITHUB_USERNAME = "blurock2";
+
+async function loadGithubProfile() {
+
+    const profileAvatar = document.getElementById("github-avatar");
+    const footerAvatar = document.getElementById("footer-avatar");
+    const fallback = document.getElementById("github-avatar-fallback");
+
+    if (!profileAvatar || !footerAvatar) {
+        return;
+    }
+
+    try {
+
+        const response = await fetch(
+            `https://api.github.com/users/${GITHUB_USERNAME}`
+        );
+
+        if (!response.ok) {
+            throw new Error("GitHub profile request failed.");
+        }
+
+        const profile = await response.json();
+
+        profileAvatar.src = profile.avatar_url;
+        footerAvatar.src = profile.avatar_url;
+        profileAvatar.classList.add("is-visible");
+        footerAvatar.classList.add("is-visible");
+
+        if (fallback) {
+            fallback.hidden = true;
+        }
+
+    } catch (error) {
+        console.error("Failed to load GitHub profile:", error);
+    }
+
+}
 
 // ======================================== Load the damn thing (discord widget)
 
@@ -121,6 +159,7 @@ function updateYear() {
 
 document.addEventListener("DOMContentLoaded", () => {
 
+    loadGithubProfile();
     loadDiscordWidget();
 
     updateYear();
